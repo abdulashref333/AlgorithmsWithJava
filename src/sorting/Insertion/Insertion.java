@@ -9,21 +9,16 @@ public class Insertion {
             currentElement = list[i];
 
             int j = i-1 ;
-            while( j>0 && list[j] > currentElement){
+            while( j>=0 && list[j] > currentElement){
                 //here we swap every element less than the current value till find any place holding value less than -
                 // the current value.
+                //this loop for shifting elements to insert the current element in the right place.
                 list[j+1] = list[j];
                 j--;
             }
+            //insert the current element in it's right place
+            list[j+1] = currentElement;
 
-            if(currentElement > list[j]){
-                //here we insert the current value in it's right place.
-                list[j+1] = currentElement;
-            }else{
-                //this swaping between the first two elements.
-                list[j+1] = list[j];
-                list[j] = currentElement;
-            }
         }
         return list;
     }
